@@ -52,11 +52,12 @@ OUTPUT(CityCounts, NAMED('Cases_By_City'));
 
 
 
+// Fix: Explicitly export as CSV with real columns
 ExportForML := PROJECT(CleanKids, TRANSFORM({
         STRING25 city;
         STRING2 state;
         UNSIGNED1 age;
-        UNSIGNED4 dateMissing
+        UNSIGNED8 dateMissing;
     },
     SELF.city := LEFT.MissingCity,
     SELF.state := LEFT.MissingState,
@@ -64,4 +65,6 @@ ExportForML := PROJECT(CleanKids, TRANSFORM({
     SELF.dateMissing := LEFT.DateMissing
 ));
 
-OUTPUT(ExportForML,,'~output::kids_features',CSV(SEPARATOR(','), TERMINATOR('\n')));
+OUTPUT(ExportForML,,'~output::kids_features',CSV(HEADING(TRUE), SEPARATOR(','), TERMINATOR('\n')), OVERWRITE);
+
+

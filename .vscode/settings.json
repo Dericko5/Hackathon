@@ -2,7 +2,7 @@
     "ecl.forceProxySupport": true,
     "ecl.launchConfiguration": "WorkshopCluster",
     "ecl.targetCluster": {
-        "WorkshopCluster": "thor"
+        "WorkshopCluster": "roxie"
     },
     "ecl.eclccPath": "C:\\Program Files (x86)\\HPCCSystems\\9.0.4\\clienttools\\bin\\eclcc.exe"
 }
