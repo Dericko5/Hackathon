@@ -103,10 +103,10 @@ def main():
     
     # ----- 8) Plot the forecast -----
     fig1 = model.plot(forecast)
-    ax1 = fig1.axes[0]  # Explicitly get the first axes object
+    ax1 = fig1.axes[0] 
     ax1.set_title("Missing Kids Forecast (with Holiday Effects)", fontsize=14)
     ax1.set_xlabel("Date", fontsize=12)
-    ax1.set_ylabel("Number of Missing Children", fontsize=12)
+    ax1.set_ylabel("Number of Missing Children Daily", fontsize=12)
     fig1.savefig("forecast_recent.png", dpi=150)
     
     # Components: weekly, yearly, holidays
