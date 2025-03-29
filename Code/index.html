@@ -1,35 +1,47 @@
 <!DOCTYPE html>
-<html lnag = "en">
+<html lang="en">
+
 <head>
-    <meta charset = "UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title> Missing Kids Search</title>
-
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missing Kids Search</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-blue-100 font-sans">
-    
-    <header class="bg-blue-600 text-white text-center p-4 shadow-md ">
-        <h1 class = "text-lg font bold">Missing Kids Search</h1>
 
+    <header class="bg-blue-600 text-white text-center p-8 shadow-md rounded-b-xl">
+        <h1 class="text-3xl font-extrabold tracking-wide">Missing Kids Search</h1>
+        <p class="text-sm mt-1 text-blue-100">Search missing kids by location, name, or date</p>
     </header>
+    
 
-    <div class = "bg-red-100 min-h-screen flex flex-col items-center p-10 w-full  space-y-4">
+    <div class="bg-gray-100 min-h-screen flex flex-col items-center pt-4 space-y-4">
 
-        <input type = "text" id = "city" placeholder = "City" class = "w-full p-2 border rounded-x1">
-        <input type = "text" id = "state" placeholder = "State" class = "w-full p-2 border rounded-x1">
-        <input type = "text" id = "first" placeholder="First Name" class =  "w-full p-2 border rounded-x1">
-        <input type = "text" id = "last" placeholder = "Last Name" class = "w-full p-2 border rounded-x1">
-        <input type = "text" id = "date" placeholder="Date Missing" class = "w-full p-2 border rounded-x1">
-
-        <button onclick = "search()" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded-xl">Search</button>
-
+        <div class="w-full max-w-md space-y-3">
+            <input type="text" id="realCity" placeholder="City" class="w-full p-2 border rounded-lg shadow-sm focus:ring focus:outline-none">
+            <input type="text" id="realState" placeholder="State" class="w-full p-2 border rounded-lg shadow-sm focus:ring focus:outline-none">
+            <input type="text" id="realFirst" placeholder="First Name" class="w-full p-2 border rounded-lg shadow-sm focus:ring focus:outline-none">
+            <input type="text" id="realLast" placeholder="Last Name" class="w-full p-2 border rounded-lg shadow-sm focus:ring focus:outline-none">
+            <input type="text" id="realAge" placeholder="Date Missing" class="w-full p-2 border rounded-lg shadow-sm focus:ring focus:outline-none">
+    
+            <div class="flex items-center space-x-2">
+                <input type="checkbox" id="exactMatch" class="rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                <label for="exactMatch" class="text-sm">Exact match</label>
+            </div>
+    
+            <button onclick="search()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-lg shadow">Search</button>
+        </div>
     </div>
+    
+    <!-- RESULTS -->
+    <div class="flex justify-center mt-8 w-full">
+        <div id="results" class="space-y-2 px-4 w-full max-w-2xl"></div>
+    </div>
+    
 
-    <div id = "results" class = "mt-8 w-full max-w-3x1 space-y-2"></div>
     <script src="app.js"></script>
 
 </body>
+
 </html>
